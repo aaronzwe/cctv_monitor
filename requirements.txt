@@ -4,3 +4,4 @@ torchvision
 ultralytics
 mediapipe
 numpy
+scipy
