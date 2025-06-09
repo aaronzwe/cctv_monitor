@@ -24,6 +24,13 @@ sudo apt-get install -y \
     libx264-dev \
     ffmpeg
 
+# Check for NVIDIA CUDA toolkit
+if nvcc --version &> /dev/null; then
+    echo "NVIDIA CUDA toolkit detected. You may be able to leverage GPU acceleration."
+else
+    echo "NVIDIA CUDA toolkit not detected. Proceeding with CPU-based setup. For GPU acceleration, please install the CUDA toolkit appropriate for your NVIDIA driver."
+fi
+
 # Create virtual environment
 python3 -m venv venv
 source venv/bin/activate
